@@ -1,0 +1,333 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Telegram Mini App specific styles */
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+    min-height: 100vh;
+  }
+
+  /* Telegram theme colors */
+  :root {
+    --tg-theme-bg-color: #ffffff;
+    --tg-theme-text-color: #000000;
+    --tg-theme-hint-color: #999999;
+    --tg-theme-link-color: #2481cc;
+    --tg-theme-button-color: #2481cc;
+    --tg-theme-button-text-color: #ffffff;
+  }
+
+  [data-theme="dark"] {
+    --tg-theme-bg-color: #17212b;
+    --tg-theme-text-color: #ffffff;
+    --tg-theme-hint-color: #7d7d7d;
+    --tg-theme-link-color: #4da6ea;
+    --tg-theme-button-color: #4da6ea;
+    --tg-theme-button-text-color: #ffffff;
+  }
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: 220 13% 9%;
+  --foreground: 0 0% 95%;
+  --card: 220 13% 11%;
+  --card-foreground: 0 0% 95%;
+  --popover: 220 13% 11%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 220 13% 18%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 220 13% 14%;
+  --secondary-foreground: 220 9% 46%;
+  --muted: 220 13% 14%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 220 13% 14%;
+  --accent-foreground: 220 9% 46%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 13% 16%;
+  --input: 220 13% 16%;
+  --ring: 220 13% 18%;
+  --chart-1: 220 13% 18%;
+  --chart-2: 220 13% 14%;
+  --chart-3: 220 13% 10%;
+  --chart-4: 220 13% 16%;
+  --chart-5: 220 13% 12%;
+  --sidebar: 220 13% 11%;
+  --sidebar-foreground: 0 0% 95%;
+  --sidebar-primary: 220 13% 18%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 220 13% 14%;
+  --sidebar-accent-foreground: 220 9% 46%;
+  --sidebar-border: 220 13% 16%;
+  --sidebar-ring: 220 13% 18%;
+}
+
+.dark {
+  --background: 220 13% 4%;
+  --foreground: 0 0% 95%;
+  --card: 220 13% 6%;
+  --card-foreground: 0 0% 95%;
+  --popover: 220 13% 6%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 220 13% 14%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 220 13% 10%;
+  --secondary-foreground: 220 9% 46%;
+  --muted: 220 13% 10%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 220 13% 10%;
+  --accent-foreground: 220 9% 46%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 13% 12%;
+  --input: 220 13% 12%;
+  --ring: 220 13% 14%;
+  --chart-1: 220 13% 14%;
+  --chart-2: 220 13% 10%;
+  --chart-3: 220 13% 12%;
+  --chart-4: 220 13% 8%;
+  --chart-5: 220 13% 16%;
+  --sidebar: 220 13% 6%;
+  --sidebar-foreground: 0 0% 95%;
+  --sidebar-primary: 220 13% 14%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 220 13% 10%;
+  --sidebar-accent-foreground: 220 9% 46%;
+  --sidebar-border: 220 13% 12%;
+  --sidebar-ring: 220 13% 14%;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Ensure dark mode classes are applied correctly */
+  .dark {
+    color-scheme: dark;
+  }
+
+  .light {
+    color-scheme: light;
+  }
+
+  /* Fix dropdown menu styling */
+  [data-radix-dropdown-menu-content] {
+    background-color: hsl(var(--popover)) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+  }
+
+  /* View Transition API styles for tab switching */
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* Smooth transitions for tab content */
+  ::view-transition-old(root) {
+    animation: fade-out 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::view-transition-new(root) {
+    animation: fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Tab-specific transitions - visual indicators only (no text movement) */
+  ::view-transition-old(tab-download),
+  ::view-transition-old(tab-history),
+  ::view-transition-old(tab-settings) {
+    animation: visual-indicator-fade-out 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::view-transition-new(tab-download),
+  ::view-transition-new(tab-history),
+  ::view-transition-new(tab-settings) {
+    animation: visual-indicator-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Slide animations for main content based on navigation direction */
+  .slide-forward ::view-transition-old(main-content) {
+    animation: slide-out-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-forward ::view-transition-new(main-content) {
+    animation: slide-in-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-backward ::view-transition-old(main-content) {
+    animation: slide-out-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-backward ::view-transition-new(main-content) {
+    animation: slide-in-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Keyframe animations */
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Visual indicator animations - no text movement */
+  @keyframes visual-indicator-fade-out {
+    to {
+      opacity: 0.8;
+      filter: brightness(0.95);
+    }
+  }
+
+  @keyframes visual-indicator-fade-in {
+    from {
+      opacity: 0.8;
+      filter: brightness(0.95);
+    }
+    to {
+      opacity: 1;
+      filter: brightness(1);
+    }
+  }
+
+  /* Slide animations for tab content */
+  @keyframes slide-out-left {
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out-right {
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Tab button bounce effect */
+  @keyframes bounce-in {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Remove old slide animations */
+  @keyframes slide-out-up {
+    to {
+      opacity: 0.8;
+      filter: brightness(0.95);
+    }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      opacity: 0.8;
+      filter: brightness(0.95);
+    }
+    to {
+      opacity: 1;
+      filter: brightness(1);
+    }
+  }
+
+  [data-radix-dropdown-menu-content] {
+    background-color: hsl(var(--popover)) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+  }
+}
