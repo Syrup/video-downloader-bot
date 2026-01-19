@@ -6,8 +6,8 @@ A Telegram bot that literally yoinks videos from TikTok, Instagram Reels, Facebo
 
 [![Docker Image](https://img.shields.io/badge/Docker-Production%20Ready-blue)](Dockerfile)
 [![Bun](https://img.shields.io/badge/Bun-Fast%20Runtime-orange?logo=bun)](https://bun.sh)
-[![It's giving](https://img.shields.io/badge/It's-Giving-ff69b4)]()
-[![No cap](https://img.shields.io/badge/No-Cap-00ff00)]()
+![It's giving](https://img.shields.io/badge/It's-Giving-ff69b4)
+![No cap](https://img.shields.io/badge/No-Cap-00ff00)
 
 ## ✨ Features That SLAP ✨
 - 🎥💖 Download TikTok (vt.tiktok.com, m.tiktok.com), Instagram Reels, Facebook Reels - literally ALL the vibes
